@@ -24,7 +24,7 @@ test:
     test-sets: {}
   delay: 5
   apiTimeout: 30
-  coverage: true
+  coverage: false
   goCoverage: false
   coverageReportPath: ''
   ignoreOrdering: true

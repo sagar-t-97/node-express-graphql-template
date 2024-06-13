@@ -17,7 +17,7 @@ ARG ENVIRONMENT_NAME
 ARG BUILD_NAME
 ARG APP_PATH
 ENV APP_PATH=${APP_PATH:-/default/path} 
-RUN yarn global add sequelize-cli@6.2.0 nyc
+RUN yarn global add sequelize-cli@6.2.0 nyc@15.1.0
 RUN yarn add shelljs bull dotenv pg sequelize@6.6.5
 RUN apk add --no-cache dumb-init
 ADD scripts/migrate-and-run.sh ${APP_PATH}/

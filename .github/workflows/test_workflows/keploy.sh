@@ -11,7 +11,7 @@ sudo chmod a+x keployE && sudo mkdir -p /usr/local/bin && sudo mv keployE /usr/l
 echo "Project built successfully"
 
 
-sudo -E env PATH="$PATH" /usr/local/bin/keployE test -c "sudo docker compose -f keploy-docker-compose.yml up" --containerName "custom_app" --delay 30 --apiTimeout 300 --generateGithubActions=false --coverage=false
+sudo -E env PATH="$PATH" /usr/local/bin/keployE test -c "sudo docker compose -f keploy-docker-compose.yml up" --containerName "custom_app" --delay 30 --apiTimeout 300 --generateGithubActions=false --coverage=true
 echo "Keploy started in test mode"
 
 all_passed=true

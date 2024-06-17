@@ -24,14 +24,14 @@ test:
     test-sets: {}
   delay: 5
   apiTimeout: 30
-  coverage: false
+  coverage: true
   goCoverage: false
   coverageReportPath: ''
   ignoreOrdering: true
   mongoPassword: default@123
   language: ''
   removeUnusedMocks: false
-  dedup: false
+  dedup: true
   freezeTime: true
 record:
   recordTimer: 0s

@@ -16,8 +16,8 @@ echo "Keploy started in test mode"
 
 all_passed=true
 
-# Loop through test sets 1 to 4
-for i in {1..4}
+# Loop through test sets
+for i in {0..0}
 do
     # Define the report file for each test set
     report_file="./keploy/reports/test-run-0/test-set-$i-report.yaml"

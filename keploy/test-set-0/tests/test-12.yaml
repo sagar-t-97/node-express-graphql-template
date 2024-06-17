@@ -1,0 +1,56 @@
+version: api.keploy.io/v1beta1
+kind: Http
+name: test-12
+spec:
+    metadata: {}
+    req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:9000/graphql
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJmaXJzdE5hbWUiOiJHcmVnb3JpYSIsImxhc3ROYW1lIjoiRmVycnkiLCJlbWFpbCI6IkxlbXBpLkZheTdAeWFob28uY29tIiwicGFzc3dvcmQiOiJkYWE5MzIwZjVjNTg0NGI4NGIyOGUwMTZiNGI4YzQwYiIsImNyZWF0ZWRBdCI6IjIwMjItMDctMjVUMTg6MTA6NTQuNjE3WiIsInVwZGF0ZWRBdCI6bnVsbCwiZGVsZXRlZEF0IjpudWxsfSwiaWF0IjoxNzE4NjAxNDg2LCJleHAiOjE3MTg2ODc4ODZ9.5-k18gcOhLOwKXB-v8ilxiiLYN_uc1tww0UX63darIc
+            Connection: keep-alive
+            Content-Length: "81"
+            Content-Type: application/json
+            Host: localhost:9000
+            Postman-Token: 6a94c76e-73c6-4bdf-bd17-80e7495e00fc
+            User-Agent: PostmanRuntime/7.37.3
+        body: '{"query":"mutation DeleteProduct {\n  deleteProduct (id:2005) {\n    id\n  }\n}"}'
+        timestamp: 2024-06-17T06:25:14.288958047Z
+    resp:
+        status_code: 200
+        header:
+            Access-Control-Allow-Origin: '*'
+            Connection: keep-alive
+            Content-Length: "39"
+            Content-Type: application/json; charset=utf-8
+            Date: Mon, 17 Jun 2024 06:25:14 GMT
+            Etag: W/"27-yGlMKutQ/S8dbBONGbTs/NpDJPU"
+            Keep-Alive: timeout=5
+            X-Powered-By: Express
+        body: |
+            {"data":{"deleteProduct":{"id":2005}}}
+        status_message: OK
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2024-06-17T06:25:16.370819925Z
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+    created: 1718605516
+curl: |-
+    curl --request POST \
+      --url http://localhost:9000/graphql \
+      --header 'Connection: keep-alive' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'Postman-Token: 6a94c76e-73c6-4bdf-bd17-80e7495e00fc' \
+      --header 'Content-Type: application/json' \
+      --header 'User-Agent: PostmanRuntime/7.37.3' \
+      --header 'Accept: */*' \
+      --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJmaXJzdE5hbWUiOiJHcmVnb3JpYSIsImxhc3ROYW1lIjoiRmVycnkiLCJlbWFpbCI6IkxlbXBpLkZheTdAeWFob28uY29tIiwicGFzc3dvcmQiOiJkYWE5MzIwZjVjNTg0NGI4NGIyOGUwMTZiNGI4YzQwYiIsImNyZWF0ZWRBdCI6IjIwMjItMDctMjVUMTg6MTA6NTQuNjE3WiIsInVwZGF0ZWRBdCI6bnVsbCwiZGVsZXRlZEF0IjpudWxsfSwiaWF0IjoxNzE4NjAxNDg2LCJleHAiOjE3MTg2ODc4ODZ9.5-k18gcOhLOwKXB-v8ilxiiLYN_uc1tww0UX63darIc' \
+      --header 'Host: localhost:9000' \
+      --data '{"query":"mutation DeleteProduct {\n  deleteProduct (id:2005) {\n    id\n  }\n}"}'

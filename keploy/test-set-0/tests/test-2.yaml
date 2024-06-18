@@ -1,0 +1,54 @@
+version: api.keploy.io/v1beta1
+kind: Http
+name: test-2
+spec:
+    metadata: {}
+    req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:9000/graphql
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Connection: keep-alive
+            Content-Length: "127"
+            Content-Type: application/json
+            Host: localhost:9000
+            Postman-Token: b6f4c133-ed94-4d1c-a22d-568b2a90e0d2
+            User-Agent: PostmanRuntime/7.37.3
+        body: '{"query":"mutation SignIn {\n  signIn(email: \"Lempi.Fay7@yahoo.com\", password: \"wednesdaySolutions\") {\n    token\n  }\n}"}'
+        timestamp: 2024-06-17T06:23:18.017891577Z
+    resp:
+        status_code: 200
+        header:
+            Access-Control-Allow-Origin: '*'
+            Connection: keep-alive
+            Content-Length: "438"
+            Content-Type: application/json; charset=utf-8
+            Date: Mon, 17 Jun 2024 06:23:18 GMT
+            Etag: W/"1b6-RQyEOtyUqwTjAPe/yy+M7sI3GK4"
+            Keep-Alive: timeout=5
+            X-Powered-By: Express
+        body: |
+            {"data":{"signIn":{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJmaXJzdE5hbWUiOiJHcmVnb3JpYSIsImxhc3ROYW1lIjoiRmVycnkiLCJlbWFpbCI6IkxlbXBpLkZheTdAeWFob28uY29tIiwicGFzc3dvcmQiOiJkYWE5MzIwZjVjNTg0NGI4NGIyOGUwMTZiNGI4YzQwYiIsImNyZWF0ZWRBdCI6IjIwMjItMDctMjVUMTg6MTA6NTQuNjE3WiIsInVwZGF0ZWRBdCI6bnVsbCwiZGVsZXRlZEF0IjpudWxsfSwiaWF0IjoxNzE4NjA1Mzk4LCJleHAiOjE3MTg2OTE3OTh9.Wb7aDQvdJfbiXThgIC4GXCeAEnxsvsqnKdWW3p1Fk3o"}}}
+        status_message: OK
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2024-06-17T06:23:20.211336552Z
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+    created: 1718605400
+curl: |-
+    curl --request POST \
+      --url http://localhost:9000/graphql \
+      --header 'Accept: */*' \
+      --header 'Postman-Token: b6f4c133-ed94-4d1c-a22d-568b2a90e0d2' \
+      --header 'Host: localhost:9000' \
+      --header 'Accept-Encoding: gzip, deflate, br' \
+      --header 'Connection: keep-alive' \
+      --header 'Content-Type: application/json' \
+      --header 'User-Agent: PostmanRuntime/7.37.3' \
+      --data '{"query":"mutation SignIn {\n  signIn(email: \"Lempi.Fay7@yahoo.com\", password: \"wednesdaySolutions\") {\n    token\n  }\n}"}'

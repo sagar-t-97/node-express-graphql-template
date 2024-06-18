@@ -1,0 +1,24 @@
+version: '3'
+services:
+  app:
+    container_name: custom_app
+    build:
+      context: .
+      args:
+        BUILD_NAME: keploy
+        APP_PATH: ${APP_PATH}
+        PLATFORM: ${PLATFORM}
+    ports:
+      - 9000:9000
+    env_file:
+      - .env.${ENVIRONMENT_NAME}
+    networks:
+      - keploy-network
+    volumes:
+      - /Users/apple/repos/node-express-graphql-template/dedupData.yaml:${APP_PATH}/dedupData.yaml
+    stop_grace_period: 50s  # Increase the stop grace period to 50 seconds
+
+
+networks:
+  keploy-network:
+    external: true

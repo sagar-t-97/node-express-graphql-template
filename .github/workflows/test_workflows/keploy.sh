@@ -1,7 +1,7 @@
 curl --silent -O -L https://keploy.io/ent/install.sh 
 
 
-sudo docker compose -f keploy-docker-compose.yml build
+sudo docker compose -f keploy-docker-compose.yml --env-file .env.keploy build
 export KEPLOY_API_KEY=Iba1IAlh+GKnXPzYeA==
 curl --silent -o keployE --location "https://keploy-enterprise.s3.us-west-2.amazonaws.com/releases/latest/enterprise_linux_amd64"
 sudo chmod a+x keployE && sudo mkdir -p /usr/local/bin && sudo mv keployE /usr/local/bin
@@ -11,7 +11,7 @@ sudo chmod a+x keployE && sudo mkdir -p /usr/local/bin && sudo mv keployE /usr/l
 echo "Project built successfully"
 
 
-sudo -E env PATH="$PATH" /usr/local/bin/keployE test -c "sudo docker compose -f keploy-docker-compose.yml up" --containerName "custom_app" --delay 30 --apiTimeout 300 --generateGithubActions=false --coverage=true
+sudo -E env PATH="$PATH" /usr/local/bin/keployE test -c "sudo docker compose -f keploy-docker-compose.yml --env-file .env.keploy up" --containerName "custom_app" --delay 30 --apiTimeout 300 --generateGithubActions=false --coverage=true
 echo "Keploy started in test mode"
 
 all_passed=true
